@@ -42,10 +42,19 @@ const router = createRouter({
         },{ 
             path: '/newTest2', 
             component: () => import('../views/newViews/test1.vue') 
+        },{ 
+            path: '/login', 
+            component: () => import('../views/login.vue') 
+        },{ 
+            path: '/pagination', 
+            component: () => import('../components/pagination/index.vue') 
         },
     ] 
 })
 // router.beforeEach((to, form, next)=>{
+//     if(to.path == '/1234'){
+//         return next('/url');
+//     }
 //     if(to.path == '/home'){
 //         next();
 //     } else {

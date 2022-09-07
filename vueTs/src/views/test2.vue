@@ -6,7 +6,7 @@
     <!-- <el-input  v-model="input1"/> -->
     <!-- <div ref="iconBox" :style="{width:'30px',height:'30px',}"></div> -->
     <!-- <el-input v-model="input1" ref="iconBox"></el-input> -->
-    
+    <!-- <decoration-1 :color="['pink','yellow']" style="width:200px;height:50px;" /> -->
     <el-config-provider :locale="locale2">
         <el-color-picker :model-value="''" style="vertical-align: middle" />
     </el-config-provider>
@@ -42,6 +42,7 @@
     import { Aim } from '@element-plus/icons-vue';
     import CD from '../utils/pkgManage/CD'
     import { useConfig } from '../store/config'
+    // import { Decoration1, Decoration2 } from '@kjgl77/datav-vue3'
     // import utils from '../utils'
     export default {
         components:{
@@ -50,9 +51,14 @@
             Test1,
             Aim,
             Test4,
-            Table
+            Table,
+            // Decoration1
         },
         setup(){
+            
+
+
+
             // console.log(utils())
             const obj = ref({
                 placeholder:"Please input", 
@@ -138,7 +144,7 @@
                 locale1,
                 helloWorld,
                 getTable,
-                openPreview
+                openPreview,
             }
         }
     }

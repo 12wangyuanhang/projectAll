@@ -8,9 +8,13 @@ import CityData from './utils/index'
 import pinia from './store'
 import Particles from "particles.vue3";
 import dialogDrag from './utils/tools/dialog-drag'
+import waves from './utils/tools/waves'
 import imgPreview from './components/img-preview'
+// import DataVVue3 from '@kjgl77/datav-vue3'
+
 import 'element-plus/dist/index.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
+import 'animate.css';
 const app = createApp(App)
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)
@@ -18,7 +22,8 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 
 // console.log(dialogDrag)
 app.directive('dialogDrag', dialogDrag);
+app.directive('waves', waves);
 
 app.use(pinia).use(dialog).use(imgPreview).use(CityData).use(Particles).use(vueRouter).use(ElementPlus,{
-    size: 'small'
+    size: 'default'
 }).mount('#app')
