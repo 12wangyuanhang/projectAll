@@ -7,6 +7,10 @@ const router = createRouter({
             path: '/',
             redirect:'/home',
         },{
+            path: '/:pathMatch(.*)',
+            redirect:'/404',
+            // component: () => import('../views/error/404.vue'),
+        },{
             path:'/home',
             component: () => import('../views/test2.vue') 
         },{ 
@@ -48,7 +52,23 @@ const router = createRouter({
         },{ 
             path: '/pagination', 
             component: () => import('../components/pagination/index.vue') 
-        },
+        },{ 
+            path: '/message', 
+            component: () => import('../views/newViews/test2.vue') 
+        },{ 
+            path: '/wsChat',
+            name: 'WsChat',
+            component: () => import('../views/newViews/wsChat.vue')
+        },{
+            path: '/page1', 
+            component: () => import('../views/page1/test.vue') 
+        },{ 
+            path: '/tabChange', 
+            component: () => import('../views/tabChange.vue') 
+        },{
+            path: '/404',
+            component: () => import('../views/error/404.vue'),
+        }
     ] 
 })
 // router.beforeEach((to, form, next)=>{

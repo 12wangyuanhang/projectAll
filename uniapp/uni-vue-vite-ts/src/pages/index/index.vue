@@ -45,19 +45,19 @@
 		  </van-col>
 		</van-row>
 	</view>
-	<van-sticky position="bottom">
+	<!-- <van-sticky position="bottom">
 	  <van-tabbar v-model="active">
-	    <!-- <van-tabbar-item badge="3">
+	    <van-tabbar-item badge="3">
 	      <span>自定义</span>
 	      <template #icon="props">
 	        <img :src="props.active ? icon.active : icon.inactive" />
 	      </template>
-	    </van-tabbar-item> -->
+	    </van-tabbar-item>
 		<van-tabbar-item icon="home-o">首页</van-tabbar-item>
 	    <van-tabbar-item icon="search">标签</van-tabbar-item>
 	    <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
 	  </van-tabbar>
-	</van-sticky>
+	</van-sticky> -->
     <!-- <view class="text-area">
       <text class="title">{{ title }}</text>
 		<Button type="primary">主要按钮</Button>

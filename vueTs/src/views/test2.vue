@@ -1,4 +1,29 @@
 <template>
+    <div>
+        <el-config-provider :locale="locale2">
+        <el-color-picker :model-value="''" style="vertical-align: middle" />
+        </el-config-provider>
+        <!-- <div>
+            <Test3 :name="name" />
+        </div>         -->
+        <img style="width:200px" @click="openPreview(0)" src="https://img.alicdn.com/tfs/TB1uevcCrj1gK0jSZFuXXcrHpXa-1880-640.jpg" alt="">
+        <h2>{{config.layout.name}}</h2>
+        <div class="befferBox"></div>
+        <el-button @click="getRef()">3333</el-button>
+        <el-button @click="getTable">table</el-button>
+        <el-icon>
+            <!-- <Timer /> -->
+            <component :is="'Timer'"></component>
+        </el-icon>
+        <div class="box">
+            <div>12344</div>
+            <div>1234</div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
     <!-- <HelloWorld :ref="helloWorld" class="abc"/> -->
     <!-- <CheckDark /> -->
     <!-- <Test1 /> -->
@@ -7,28 +32,7 @@
     <!-- <div ref="iconBox" :style="{width:'30px',height:'30px',}"></div> -->
     <!-- <el-input v-model="input1" ref="iconBox"></el-input> -->
     <!-- <decoration-1 :color="['pink','yellow']" style="width:200px;height:50px;" /> -->
-    <el-config-provider :locale="locale2">
-        <el-color-picker :model-value="''" style="vertical-align: middle" />
-    </el-config-provider>
-    <!-- <div>
-        <Test3 :name="name" />
-    </div>         -->
-    <img style="width:200px" @click="openPreview(0)" src="https://img.alicdn.com/tfs/TB1uevcCrj1gK0jSZFuXXcrHpXa-1880-640.jpg" alt="">
-    <h2>{{config.layout.name}}</h2>
-    <div class="befferBox"></div>
-    <el-button @click="getRef()">3333</el-button>
-    <el-button @click="getTable">table</el-button>
-    <el-icon>
-        <Timer />
-    </el-icon>
-    <div class="box">
-        <div>12344</div>
-        <div>1234</div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+    
 </template>
 
 <script lang="tsx">
@@ -40,7 +44,7 @@
     import Table from "./table.vue";
     import { ref,resolveComponent,h,Ref, render, getCurrentInstance } from 'vue';
     import { Aim } from '@element-plus/icons-vue';
-    import CD from '../utils/pkgManage/CD'
+    import CD from '../utils/pkgManage/index'
     import { useConfig } from '../store/config'
     // import { Decoration1, Decoration2 } from '@kjgl77/datav-vue3'
     // import utils from '../utils'
@@ -114,6 +118,8 @@
                 // locale2.value = temp
                 // console.log(locale1.value)
                 // console.log(locale2.value)
+                let sd = new CD();
+                console.log(sd.getData(), 4313);
                 const action = await proxy.$dialog({
                     component:Test4,
                     dialogDrag:true,

@@ -3,9 +3,9 @@ import App from './App.vue'
 import ElementPlus from 'element-plus'
 import vueRouter from './router/index'
 import dialog from './components/dialog/index'
-import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import CityData from './utils/index'
-import pinia from './store'
+import pinia from './store/index'
 import Particles from "particles.vue3";
 import dialogDrag from './utils/tools/dialog-drag'
 import waves from './utils/tools/waves'
@@ -23,7 +23,8 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 // console.log(dialogDrag)
 app.directive('dialogDrag', dialogDrag);
 app.directive('waves', waves);
-
+console.log(import.meta.env, 123)
+console.log(process.env.BASE_URL, 321)
 app.use(pinia).use(dialog).use(imgPreview).use(CityData).use(Particles).use(vueRouter).use(ElementPlus,{
     size: 'default'
 }).mount('#app')

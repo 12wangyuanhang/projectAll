@@ -9,9 +9,12 @@ export default defineConfig({
     resolve: {
         alias: {
             "@": resolve(__dirname, "src"),
-        }
+        },
+        extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'] 
     },
-    
+    define: {
+        'process.env': Object.assign(process.env,{BASE_URL:'测试'})
+    },
     server: {
         port: 3001,
         host: '0.0.0.0',

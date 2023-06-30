@@ -85,7 +85,7 @@ export default defineComponent({
 
         const popoverSlots = () => {
             return {
-                reference:()=><el-button onClick={()=>popoverFlag.value=true}>Click to activate</el-button>
+                reference:()=><el-button onClick={()=>popoverFlag.value=!popoverFlag.value}>Click to activate</el-button>
             }
         }
         const options = [

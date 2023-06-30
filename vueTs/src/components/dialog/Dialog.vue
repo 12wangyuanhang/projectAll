@@ -1,30 +1,32 @@
 <template>
-    <div
+    <div>
+        <div
         v-loading="loading"
         v-if="loading"
         element-loading-text="Loading..."
         element-loading-background="rgba(0, 0, 0, 0.5)"
         class="dialogBox"
-    ></div>
-    <div
-        v-dialogDrag="dialogDrag"
-    >
-        <el-dialog
-            v-if="open"
-            :top="top"
-            :title="title"
-            v-model="open"
-            :show-close="true"
-            :width="width"
-            :close-on-click-modal="false"
-            :before-close="hanldeClose"
+        ></div>
+        <div
+            v-dialogDrag="dialogDrag"
         >
-        <component
-            :is="component"
-            @doCancel="doCancel"
-            :props="props"
-        ></component>
-    </el-dialog>
+            <el-dialog
+                v-if="open"
+                :top="top"
+                :title="title"
+                v-model="open"
+                :show-close="true"
+                :width="width"
+                :close-on-click-modal="false"
+                :before-close="hanldeClose"
+            >
+                <component
+                    :is="component"
+                    @doCancel="doCancel"
+                    :props="props"
+                ></component>
+            </el-dialog>
+        </div>
     </div>
 </template>
 

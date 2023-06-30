@@ -1,8 +1,10 @@
 // import Allcls from "./pkgManage";
 const filePath = import.meta.globEager('./pkgManage/**.ts');
 const filePath1 = import.meta.glob('./pkgManage/**.ts');
+import { string } from 'mathjs';
 import type {App} from 'vue';
-function retAll(dataName:string):any {
+
+function retAll(dataName?:string):any {
     // console.log(filePath1, 'filePath1')
     // for(let n in filePath1){
     //     console.log(filePath1[n]().then((res)=>{
@@ -16,7 +18,7 @@ function retAll(dataName:string):any {
     }
     return new resClass();
 }
-
+export const proviteTools = (dataName?:string) => retAll(dataName);
 export default (app:App) =>{
     app.config.globalProperties.$resultCityData = (dataName:string) => retAll(dataName)
 }

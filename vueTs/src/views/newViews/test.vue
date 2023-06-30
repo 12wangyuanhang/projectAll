@@ -34,7 +34,7 @@ function Printpart(id_str:any):void//id-str 内容中的id
     Object.assign(styleArr, document.getElementsByTagName('style'));
     
     var iframe:any = document.createElement('IFRAME');
-    var doc = null;
+    var doc:any = null;
     iframe.setAttribute('style', 'position:absolute;width:0px;height:0px;left:-500px;top:-500px;');
     
     document.body.appendChild(iframe);

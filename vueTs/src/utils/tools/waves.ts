@@ -1,8 +1,9 @@
-import { nextTick } from 'vue';
+import { DirectiveBinding, nextTick } from 'vue';
+import type { VNode } from 'vue'
 type T1 = ReturnType<any>
 export default {
     // v-waves: 波纹效果
-    mounted(el:any, binding:any, vnode:any, oldVnode:any){
+    mounted(el:HTMLElement, binding:DirectiveBinding, vnode:any, oldVnode:any){
         // 获取拖拽内容头部
         nextTick(()=>{
             el.addEventListener('click', (e:T1) => {

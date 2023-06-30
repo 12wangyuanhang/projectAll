@@ -12,3 +12,7 @@ declare module '@authing/vue-ui-components';
 declare module "particles.vue3";
 
 declare module 'sortablejs';
+
+declare module 'three/examples/jsm/libs/tween.module.min.js'
+
+declare module '@/components/img-preview/bem'
